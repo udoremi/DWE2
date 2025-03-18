@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícia</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.8em;
+        }
+
+        .container {
+            display: flex;
+            padding: 20px;
+            justify-content: space-between;
+        }
+
+        .left-column {
+            width: 41%;
+        }
+
+        .right-column {
+            width: 57%;
+        }
+
+        .left-column img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .title {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        .date {
+            font-size: 0.9em;
+            color: #888;
+            font-weight: lighter;
+        }
+
+        .content {
+            margin-top: 20px;
+            font-size: 1em; 
+            line-height: 1.4;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+        }
+
+        .content ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+
+        .content ul li {
+            margin-bottom: 8px;
+        }
+
+        .sources {
+            margin-top: 30px;
+        }
+
+        .sources a {
+            display: block;
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        .sources a:hover {
+            text-decoration: underline;
+        }
+        header{
+            padding: 25px;
+            display: flex;
+            background-color: #b0c4de;
+            justify-content: end;
+        }
+        .naveg{
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+        }
+        .naveg:hover{
+            background-color: #d3d3d3;
+        }
+        .date{
+            text-align: end;
+        }
+        span{
+            background-color: yellow;
+        }
+        .left-column img {
+            border: 3px solid blue; 
+            border-radius: 10px; 
+        }
+        .container, h1{
+            font-family: "Karla", serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="naveg">Início</a>
+            <a href="busca.html" class="naveg">Busca</a>
+            <a href="form.html" class="naveg">Formulário/Tabela</a>
+            <a href="noticia.html" class="naveg">Postagem com imagem</a>
+        </nav>
+    </header>
+
+    <h1>Postagem com imagem</h1>
+
+    <div class="container">
+        <div class="left-column">
+            <img src="https://herospark.com/blog/wp-content/uploads/sites/6/2025/01/DeepSeek-R1.jpg" alt="Imagem da empresa">
+            <figcaption>Deepseek logo, <a href="https://www.deepseek.com/" target="_blank">site oficial</a></figcaption>
+        </div>
+
+        <div class="right-column">
+            <div class="title">Entenda o que é DeepSeek, IA que derrubou ações de tecnologia nesta segunda</div>
+            <div class="date">27/01/2025 às 16:34 | Atualizado 27/01/2025 às 16:35</div>
+            
+            <div class="content">
+                <p>As ações das grandes empresas de tecnologia amargam forte queda nesta segunda-feira (27). Quem abalou a estrutura dessas companhias, que vinham atraindo olhares positivos ao longo de 2024 com o boom da inteligência artificial (IA), foi a chinesa DeepSeek.</p>
+                
+                <p>Na semana passada, a startup de tecnologia sediada em Hangzhou lançou um assistente digital gratuito que, segundo ela, usa menos dados e custa uma fração do custo dos modelos de empresas já estabelecidas, possivelmente marcando um ponto de virada no nível de investimento necessário para a IA.</p>
+
+                <p>A DeepSeek, que nesta segunda ultrapassou o rival norte-americano ChatGPT em termos de downloads na App Store, oferece a perspectiva de uma alternativa viável e mais barata de IA. O movimento levantou questões sobre a sustentabilidade do nível de gastos e investimentos em IA por empresas ocidentais, incluindo Apple e Microsoft.</p>
+
+                <p>Enquanto isso, <span>os papéis de Nvidia e Oracle derretiam nos mercados</span>. A gigante do setor de tecnologia especializada em chips do taiwanês Jensen Huang perdeu o posto de empresa mais valiosa do mundo com o “efeito DeepSeek”.</p>
+                
+                <p>Saiba mais sobre a DeepSeek:</p>
+                <ul>
+                    <li>A Deepseek não foi fundada por desenvolvedores do Vale do Silício.</li>
+                    <li>esta IA foi desenvolvida por uma startup chinesa</li>
+                    <li>foi fundada em 2023, com o objetivo de fomentar o uso e a acessibilidade à tecnologia</li>
+                    <li>segundo a empresa, sua ferramenta tem um desempenho melhor que o GPT-4o, da OpenAI</li>
+                </ul>
+
+                <div class="sources">
+                    <p>Fontes:</p>
+                    <a href="https://www.cnnbrasil.com.br/economia/negocios/entenda-o-que-e-deepseek-ia-que-derrubou-acoes-de-tecnologia-nesta-segunda/" target="_blank">https://www.cnnbrasil.com.br/economia/negocios/entenda-o-que-e-deepseek-ia-que-derrubou-acoes-de-tecnologia-nesta-segunda/</a>
+                    <a href="https://brasilescola.uol.com.br/noticias/deepseek-o-que-e-inteligencia-artificial-chinesa-seus-efeitos/3132097.html" target="_blank">https://brasilescola.uol.com.br/noticias/deepseek-o-que-e-inteligencia-artificial-chinesa-seus-efeitos/3132097.html</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

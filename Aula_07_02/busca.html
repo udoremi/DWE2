@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+            *{
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+            span{
+                background-color: darkgreen;
+            }
+            header{
+                padding: 25px;
+                display: flex;
+                background-color: #b0c4de;
+                justify-content: end;
+            }
+            nav a{
+                padding: 10px;
+                color: black;
+                text-decoration: none;
+            }
+            nav a:hover{
+                background-color: #d3d3d3;
+            }
+            .container{
+                color: darkgoldenrod;
+                height: 30vh;
+                background-image: url(11063.jpg);
+                font-size: 25px;
+                padding-top: 50px;
+            }
+            input, button{
+                font-size: 30px;
+            }
+            h1{
+                padding-bottom: 20px;
+            }
+            .sites{
+                margin: 60px;
+                display: flex;
+               padding-left: 30px;
+                justify-content: flex-start;
+                font-size: 30px;
+            }
+            li{
+                list-style: square;
+                text-align: left;
+            }
+            .apag{
+                background-color: white;
+                opacity: 0.5;
+                font-size: small;
+            }
+            h1, li{
+                font-family: "Roboto Condensed", serif;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="busca.html">Busca</a>
+            <a href="form.html">Formulário/Tabela</a>
+            <a href="noticia.html">Postagem com imagem</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Busca de conteúdo</h1>
+        <input type="text" name="" id="" placeholder="Digite para buscar">
+        <button>Pesquisar</button>
+    </div>
+
+    <div class="sites">
+        <ul>
+            <li><a href="#">Sobre mim</a></li>
+            <li><a href="https://vtp.ifsp.edu.br" target="_blank" >Site do <span>IFSP Campus Votuporanga</span></a> <span class="apag">(nova aba)</span></li>
+            <li><a href="https://vtp.ifsp.edu.br/images/BSI/PPC_BSI_Votuporanga.pdf" target="_blank">PPC Atualizado do Curso de BSI</a> <span class="apag">(nova aba)</span></li>
+        </ul>
+    </div>
+</body>
+</html>

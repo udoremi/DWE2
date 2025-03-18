@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+        body {
+            text-align: center;
+            margin: 0;
+        }
+        .container, h1{
+            font-family: "Quicksand", serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 80px;
+            margin-top: 20px;
+        }
+        .form-container {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            width: 370px;
+        }
+        .form-container input, .form-container select {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        .btn-enviar {
+            background: #4CAF50;
+            color: white;
+        }
+        .btn-limpar {
+            background: #FFC107;
+            color: black;
+            margin-top: 10px;
+        }
+        table {
+            width: 1000px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th {
+            background: green;
+            color: white;
+            padding: 10px;
+        }
+        td {
+            padding: 8px;
+            background: #fff;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+        header{
+            padding: 25px;
+            display: flex;
+            background-color: #b0c4de;
+            justify-content: end;
+        }
+        nav a{
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+        }
+        nav a:hover{
+            background-color: #d3d3d3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="busca.html">Busca</a>
+            <a href="form.html">Formulário/Tabela</a>
+            <a href="noticia.html">Postagem com imagem</a>
+        </nav>
+    </header>
+
+    <h1>Formulário de cadastro e Tabela com dados</h1>
+    <div class="container">
+        <div class="form-container">
+            <label>Nome completo</label>
+            <input type="text" id="nome" placeholder="Nome completo">
+            <label>Telefone</label>
+            <input type="text" id="telefone" placeholder="(99)99999-9999">
+            <label>E-mail</label>
+            <input type="email" id="email" placeholder="seu@email.aqui">
+            <label>Estado de residência</label>
+            <select id="estado">
+                <option value="">[Selecione]</option>
+                <option value="São Paulo">São Paulo</option>
+                <option value="Santa Catarina">Santa Catarina</option>
+                <option value="Rio de Janeiro">Rio de Janeiro</option>
+            </select>
+            <button class="btn-enviar" onclick="adicionarDados()">Enviar</button>
+            <button class="btn-limpar" onclick="limparFormulario()">Limpar</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-dados">
+                <tr>
+                    <td>José da Silva</td>
+                    <td>(11) 99785-4871</td>
+                    <td>josesilva11@gmail.com</td>
+                    <td>Santa Catarina</td>
+                </tr>
+                <tr>
+                    <td>Marcos William Freitas</td>
+                    <td>(11) 99784-4812</td>
+                    <td>mwfreitas@microsoft.com</td>
+                    <td>São Paulo</td>
+                </tr>
+                <tr>
+                    <td>Ana Luiza dos Reis Barco</td>
+                    <td>(14) 81475-4812</td>
+                    <td>anareis@microsoft.com</td>
+                    <td>São Paulo</td>
+                </tr>
+                <tr>
+                    <td>Keila Santanna de Souza</td>
+                    <td>(17) 99744-1155</td>
+                    <td>keila.santanna@outlook.com</td>
+                    <td>São Paulo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function adicionarDados() {
+            const nome = document.getElementById("nome").value;
+            const telefone = document.getElementById("telefone").value;
+            const email = document.getElementById("email").value;
+            const estado = document.getElementById("estado").value;
+            
+            if (nome && telefone && email && estado) {
+                const tabela = document.getElementById("tabela-dados");
+                const novaLinha = tabela.insertRow();
+                novaLinha.innerHTML = `<td>${nome}</td><td>${telefone}</td><td>${email}</td><td>${estado}</td>`;
+                limparFormulario();
+            } else {
+                alert("Por favor, preencha todos os campos!");
+            }
+        }
+
+        function limparFormulario() {
+            document.getElementById("nome").value = "";
+            document.getElementById("telefone").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("estado").value = "";
+        }
+    </script>
+</body>
+</html>
