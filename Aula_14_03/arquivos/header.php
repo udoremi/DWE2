@@ -1,5 +1,11 @@
 <?php
-session_start();
+$pagina_atual = basename($_SERVER['PHP_SELF']);
+$logado = false;
+if(isset($_SESSION["user"])){
+    $logado = true;
+}else{
+    $logado = false;
+}
 ?>
 
 <!DOCTYPE html>
@@ -43,33 +49,20 @@ session_start();
             </a>
 
             <ul class="nav nav-pills">
-    <li class="nav-item">
-        <a href="index.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>" aria-current="page">Início</a>
-    </li>
-    <li class="nav-item">
-        <a href="about.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'about.php' ? 'active' : ''; ?>">Sobre</a>
-    </li>
-    <li class="nav-item">
-        <a href="faq.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'faq.php' ? 'active' : ''; ?>">FAQs</a>
-    </li>
-    <li class="nav-item">
-        <a href="contato.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'contato.php' ? 'active' : ''; ?>">Contato</a>
-    </li>
-    <?php
-        // Verifica se a sessão está ativa (usuário logado)
-        if (isset($_SESSION["user"]) && !empty($_SESSION["user"])) {
-            echo "<li class='nav-item'>
-                    <a href='perfil.php' class='nav-link " . (basename($_SERVER['PHP_SELF']) == 'perfil.php' ? 'active' : '') . "'>Perfil</a>
-                </li>";
-            echo "<li class='nav-item'>
-                    <a href='logout.php' class='nav-link'>Sair</a>
-                </li>";
-        } else {
-            echo "<li class='nav-item'>
-                    <a href='login.php' class='nav-link " . (basename($_SERVER['PHP_SELF']) == 'login.php' ? 'active' : '') . "'>Entrar</a>
-                </li>";
-        }
-    ?>
-</ul>
+                <li class="nav-item"><a href="inicio.php" class="nav-link <?php echo ($pagina_atual == 'index.php') ? 'active' : ''; ?>" aria-current="page">Início</a></li>
+                <li class="nav-item"><a href="sobre.php" class="nav-link <?php echo ($pagina_atual == 'sobre.php') ? 'active' : ''; ?>">Sobre</a></li>
+                <li class="nav-item"><a href="FAQs.php" class="nav-link <?php echo ($pagina_atual == 'faq.php') ? 'active' : ''; ?>">FAQs</a></li>
+                <li class="nav-item"><a href="contato.php" class="nav-link <?php echo ($pagina_atual == 'contato.php') ? 'active' : ''; ?>">Contato</a></li>
+                <?php
+                    if ($logado == true) {
+                        echo "<li class='nav-item'><a href='perfil.php' class='nav-link " . 
+                                (($pagina_atual == 'perfil.php') ? 'active' : '') . "'>Perfil</a></li>";
+                        echo "<li class='nav-item'><a href='sair.php' class='nav-link text-danger'>Sair</a></li>";
+                    } else{
+                        echo "<li class='nav-item'><a href='login.php' class='nav-link " . 
+                             (($pagina_atual == 'login.php') ? 'active' : '') . "'>Entrar</a></li>";
+                    }
+                ?>     
+            </ul>
 
         </header>
